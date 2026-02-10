@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photomodel | Professional Photography Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📷</text></svg>">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <h1 class="logo">Photomodel</h1>
-            <button class="nav-toggle">
+            <button class="nav-toggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav class="navigation">
+            <nav class="navigation" role="navigation" aria-label="Main navigation">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" aria-label="Home">Home</a></li>
+                    <li><a href="#gallery" aria-label="Gallery">Gallery</a></li>
+                    <li><a href="#services" aria-label="Services">Services</a></li>
+                    <li><a href="#about" aria-label="About">About</a></li>
+                    <li><a href="#testimonials" aria-label="Testimonials">Testimonials</a></li>
+                    <li><a href="#contact" aria-label="Contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,52 +32,81 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <h2>Professional Photography Services</h2>
-            <p>Capturing life's most precious moments with artistic vision and technical excellence</p>
-            <a href="#gallery" class="btn">View Gallery</a>
+        <div class="hero-content">
+            <h1 class="hero-title">Capturing Life's Most Precious Moments</h1>
+            <p class="hero-subtitle">Professional Photography Services with Artistic Vision</p>
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn btn-primary">View Gallery</a>
+                <a href="#contact" class="btn btn-secondary">Book Session</a>
+            </div>
         </div>
+        <div class="hero-overlay"></div>
     </section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
-            <h2>Our Work</h2>
+            <h2 class="section-title">Portfolio Gallery</h2>
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="portrait">Portraits</button>
+                <button class="filter-btn" data-filter="wedding">Weddings</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+            </div>
             <div class="gallery-grid">
-                <div class="gallery-item" data-src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" data-alt="Portrait Photography">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Portrait Photography">
+                <div class="gallery-item" data-category="portrait" data-src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" data-alt="Portrait Photography">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" alt="Portrait Photography" loading="lazy">
                     <div class="gallery-overlay">
-                        <span>Click to view</span>
+                        <span class="overlay-text">View Details</span>
                     </div>
                 </div>
-                <div class="gallery-item" data-src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" data-alt="Wedding Photography">
-                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Wedding Photography">
+                <div class="gallery-item" data-category="wedding" data-src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" data-alt="Wedding Photography">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" alt="Wedding Photography" loading="lazy">
                     <div class="gallery-overlay">
-                        <span>Click to view</span>
+                        <span class="overlay-text">View Details</span>
                     </div>
                 </div>
-                <div class="gallery-item" data-src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" data-alt="Event Photography">
-                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Event Photography">
+                <div class="gallery-item" data-category="events" data-src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" data-alt="Event Photography">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" alt="Event Photography" loading="lazy">
                     <div class="gallery-overlay">
-                        <span>Click to view</span>
+                        <span class="overlay-text">View Details</span>
                     </div>
                 </div>
-                <div class="gallery-item" data-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" data-alt="Commercial Photography">
-                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Commercial Photography">
+                <div class="gallery-item" data-category="commercial" data-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" data-alt="Commercial Photography">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" alt="Commercial Photography" loading="lazy">
                     <div class="gallery-overlay">
-                        <span>Click to view</span>
+                        <span class="overlay-text">View Details</span>
                     </div>
                 </div>
-                <div class="gallery-item" data-src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" data-alt="Fashion Photography">
-                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Fashion Photography">
+                <div class="gallery-item" data-category="portrait" data-src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" data-alt="Fashion Photography">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" alt="Fashion Photography" loading="lazy">
                     <div class="gallery-overlay">
-                        <span>Click to view</span>
+                        <span class="overlay-text">View Details</span>
                     </div>
                 </div>
-                <div class="gallery-item" data-src="https://images.unsplash.com/photo-1511497888253-a032814a8b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" data-alt="Landscape Photography">
-                    <img src="https://images.unsplash.com/photo-1511497888253-a032814a8b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Landscape Photography">
+                <div class="gallery-item" data-category="landscape" data-src="https://images.unsplash.com/photo-1511497888253-a032814a8b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" data-alt="Landscape Photography">
+                    <img src="https://images.unsplash.com/photo-1511497888253-a032814a8b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" alt="Landscape Photography" loading="lazy">
                     <div class="gallery-overlay">
-                        <span>Click to view</span>
+                        <span class="overlay-text">View Details</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="wedding" data-src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" data-alt="Wedding Ceremony">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" alt="Wedding Ceremony" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="overlay-text">View Details</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-src="https://images.unsplash.com/photo-1511795403739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" data-alt="Corporate Event">
+                    <img src="https://images.unsplash.com/photo-1511795403739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" alt="Corporate Event" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="overlay-text">View Details</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="commercial" data-src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" data-alt="Product Photography">
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" alt="Product Photography" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="overlay-text">View Details</span>
                     </div>
                 </div>
             </div>
@@ -86,35 +116,67 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" tabindex="0">
                     <div class="service-icon">
                         <i class="fas fa-camera"></i>
                     </div>
-                    <h3>Portrait Photography</h3>
-                    <p>Capturing your essence and personality in stunning portraits that tell your unique story.</p>
+                    <h3 class="service-title">Portrait Photography</h3>
+                    <p class="service-description">Capturing your essence and personality in stunning portraits that tell your unique story. From individual portraits to family sessions, we create timeless images that reflect your authentic self.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>Individual Portraits</li>
+                            <li>Family Sessions</li>
+                            <li>Corporate Headshots</li>
+                            <li>Maternity & Baby Photos</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card" tabindex="0">
                     <div class="service-icon">
                         <i class="fas fa-heart"></i>
                     </div>
-                    <h3>Wedding Photography</h3>
-                    <p>Preserving the magic of your special day with artistic and emotional captures.</p>
+                    <h3 class="service-title">Wedding Photography</h3>
+                    <p class="service-description">Preserving the magic of your special day with artistic and emotional captures. We document every precious moment from preparation to celebration, ensuring your wedding memories last forever.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>Engagement Sessions</li>
+                            <li>Full Wedding Coverage</li>
+                            <li>Pre-Wedding Shoots</li>
+                            <li>Post-Wedding Sessions</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card" tabindex="0">
                     <div class="service-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Event Photography</h3>
-                    <p>Documenting memorable events with professional coverage and creative angles.</p>
+                    <h3 class="service-title">Event Photography</h3>
+                    <p class="service-description">Documenting memorable events with professional coverage and creative angles. Whether it's a corporate conference, birthday party, or milestone celebration, we capture the atmosphere and emotion.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>Corporate Events</li>
+                            <li>Birthday Parties</li>
+                            <li>Conferences & Seminars</li>
+                            <li>Brand Launches</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card" tabindex="0">
                     <div class="service-icon">
                         <i class="fas fa-building"></i>
                     </div>
-                    <h3>Commercial Photography</h3>
-                    <p>Professional product and corporate photography that elevates your brand.</p>
+                    <h3 class="service-title">Commercial Photography</h3>
+                    <p class="service-description">Professional product and corporate photography that elevates your brand. We create compelling visual content that drives engagement and showcases your products or services effectively.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>Product Photography</li>
+                            <li>Corporate Branding</li>
+                            <li>Architectural Photography</li>
+                            <li>Interior Photography</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,40 +185,71 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2>Client Testimonials</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Photomodel captured our wedding day perfectly. Every moment was beautifully preserved with such artistic vision."</p>
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <p>"Photomodel captured our wedding day perfectly. Every moment was beautifully preserved with such artistic vision. The photographs are timeless and exceed our expectations."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p class="author-position">Wedding Client</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Wedding Client</p>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <p>"The portrait session was exceptional. The photographer understood my vision and delivered beyond expectations. The quality and artistic touch are outstanding."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Michael Chen</h4>
+                                    <p class="author-position">Portrait Client</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <p>"Professional, creative, and incredibly talented. Our company photos turned out better than we imagined. The attention to detail and artistic approach made all the difference."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Emily Rodriguez</h4>
+                                    <p class="author-position">Business Client</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <p>"The team was amazing from start to finish. They made us feel comfortable and captured our personalities perfectly. The final gallery was exactly what we envisioned."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>David Thompson</h4>
+                                    <p class="author-position">Family Client</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"The portrait session was exceptional. The photographer understood my vision and delivered beyond expectations."</p>
+                <div class="testimonial-nav">
+                    <button class="nav-btn prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                        <span class="indicator" data-slide="3"></span>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Michael Chen</h4>
-                            <p>Portrait Client</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Professional, creative, and incredibly talented. Our company photos turned out better than we imagined."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Emily Rodriguez</h4>
-                            <p>Business Client</p>
-                        </div>
-                    </div>
+                    <button class="nav-btn next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
@@ -165,16 +258,30 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2>About Us</h2>
+            <h2 class="section-title">About Photomodel</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>Photomodel is a professional photography studio dedicated to capturing life's most precious moments with artistic vision and technical excellence.</p>
-                    <p>With over 10 years of experience, we specialize in portrait, event, and commercial photography that tells your unique story.</p>
-                    <p>Our passion lies in creating timeless images that preserve memories and evoke emotions. Every photograph is carefully crafted to reflect your personality and style.</p>
-                    <a href="#contact" class="btn">Book a Session</a>
+                    <p>With over 10 years of experience, we specialize in portrait, event, and commercial photography that tells your unique story. Our passion lies in creating timeless images that preserve memories and evoke emotions.</p>
+                    <p>Every photograph is carefully crafted to reflect your personality and style, ensuring that each image captures not just a moment, but the essence of who you are.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Photos Captured</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Book a Session</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1544037995-3fb6469f5b39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=600&q=80" alt="Photographer">
+                    <img src="https://images.unsplash.com/photo-1544037995-3fb6469f5b39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=600&q=80" alt="Photographer at work" loading="lazy">
                 </div>
             </div>
         </div>
@@ -183,52 +290,84 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
-                <form id="contactForm" class="contact-form">
+                <form id="contactForm" class="contact-form" novalidate>
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name" class="form-label">Full Name *</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                        <span class="error-message" id="name-error"></span>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                        <span class="error-message" id="email-error"></span>
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
                     </div>
                     <div class="form-group">
-                        <select id="service" name="service" required>
+                        <label for="service" class="form-label">Service Interested In *</label>
+                        <select id="service" name="service" required aria-required="true">
                             <option value="" disabled selected>Select Service</option>
-                            <option value="portrait">Portrait</option>
-                            <option value="wedding">Wedding</option>
-                            <option value="event">Event</option>
-                            <option value="commercial">Commercial</option>
+                            <option value="portrait">Portrait Photography</option>
+                            <option value="wedding">Wedding Photography</option>
+                            <option value="event">Event Photography</option>
+                            <option value="commercial">Commercial Photography</option>
                             <option value="other">Other</option>
                         </select>
+                        <span class="error-message" id="service-error"></span>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        <label for="message" class="form-label">Your Message *</label>
+                        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                        <span class="error-message" id="message-error"></span>
                     </div>
-                    <button type="submit" class="btn">Send Message</button>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
                 <div class="contact-info">
-                    <h3>Get in Touch</h3>
+                    <h3>Contact Information</h3>
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>Email: info@photomodel.com</p>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@photomodel.com</p>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>Phone: (123) 456-7890</p>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>(123) 456-7890</p>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Location: New York, NY</p>
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>New York, NY</p>
+                        </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Pinterest" class="social-link">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -236,9 +375,9 @@
     </section>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+        <span class="close" aria-label="Close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="">
         <div class="caption" id="lightbox-caption"></div>
     </div>
 
@@ -251,12 +390,12 @@
                     <p>Professional Photography Studio</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#gallery">Gallery</a>
-                    <a href="#services">Services</a>
-                    <a href="#about">About</a>
-                    <a href="#testimonials">Testimonials</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#home" aria-label="Home">Home</a>
+                    <a href="#gallery" aria-label="Gallery">Gallery</a>
+                    <a href="#services" aria-label="Services">Services</a>
+                    <a href="#about" aria-label="About">About</a>
+                    <a href="#testimonials" aria-label="Testimonials">Testimonials</a>
+                    <a href="#contact" aria-label="Contact">Contact</a>
                 </div>
                 <div class="copyright">
                     <p>&copy; 2026 Photomodel. All rights reserved.</p>
