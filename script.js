@@ -45,7 +45,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Form submission
+// Form submission with validation
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
@@ -60,6 +60,38 @@ if (contactForm) {
             data[key] = value;
         }
         
+        // Basic validation
+        let isValid = true;
+        const errors = [];
+        
+        if (!data.name.trim()) {
+            isValid = false;
+            errors.push('Name is required');
+        }
+        
+        if (!data.email.trim()) {
+            isValid = false;
+            errors.push('Email is required');
+        } else if (!/\S+@\S+\.\S+/.test(data.email)) {
+            isValid = false;
+            errors.push('Email is invalid');
+        }
+        
+        if (!data.service) {
+            isValid = false;
+            errors.push('Please select a service');
+        }
+        
+        if (!data.message.trim()) {
+            isValid = false;
+            errors.push('Message is required');
+        }
+        
+        if (!isValid) {
+            alert('Please fill in all required fields correctly:\n' + errors.join('\n'));
+            return;
+        }
+        
         // In a real application, you would send this data to a server
         console.log('Form submitted:', data);
         
@@ -71,22 +103,51 @@ if (contactForm) {
     });
 }
 
-// Gallery item click functionality
+// Gallery lightbox functionality
 const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const closeBtn = document.querySelector('.close');
 
+// Open lightbox
 galleryItems.forEach(item => {
     item.addEventListener('click', function() {
-        const imgSrc = this.querySelector('img').src;
-        const imgAlt = this.querySelector('img').alt;
-        console.log('Gallery item clicked:', imgSrc);
-        // In a real application, you might open a modal with the full image
-        alert(`Opening image: ${imgAlt}`);
+        const imgSrc = this.getAttribute('data-src');
+        const imgAlt = this.getAttribute('data-alt');
+        
+        lightboxImg.src = imgSrc;
+        lightboxCaption.textContent = imgAlt;
+        lightbox.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
     });
+});
+
+// Close lightbox
+closeBtn.addEventListener('click', function() {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+});
+
+// Close lightbox when clicking outside the image
+lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.style.display === 'block') {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
 });
 
 // Animation on scroll
 const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.gallery-item, .about-text, .about-image, .contact-form, .contact-info');
+    const elements = document.querySelectorAll('.gallery-item, .about-text, .about-image, .contact-form, .contact-info, .service-card, .testimonial-card');
     
     elements.forEach(element => {
         const elementPosition = element.getBoundingClientRect().top;
@@ -100,7 +161,7 @@ const animateOnScroll = () => {
 };
 
 // Set initial styles for animation
-document.querySelectorAll('.gallery-item, .about-text, .about-image, .contact-form, .contact-info').forEach(el => {
+document.querySelectorAll('.gallery-item, .about-text, .about-image, .contact-form, .contact-info, .service-card, .testimonial-card').forEach(el => {
     el.style.opacity = 0;
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -111,3 +172,9 @@ window.addEventListener('scroll', animateOnScroll);
 
 // Trigger on initial load
 window.addEventListener('load', animateOnScroll);
+
+// Accessibility improvements
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.setAttribute('role', 'button');
+    anchor.setAttribute('tabindex', '0');
+});
